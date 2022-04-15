@@ -6,9 +6,11 @@ import numpy as np
 from google.colab.patches import cv2_imshow
 import dlib
 
+image_location = ''
+
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("/content/shape_predictor_68_face_landmarks.dat")
-img = cv2.imread("/content/Michelle_Obama_2013_official_portrait.jpg")
+img = cv2.imread(image_location)
 cv2_imshow(img)
 gray = cv2.cvtColor(src=img, code=cv2.COLOR_BGR2GRAY)
 faces = detector(gray)
