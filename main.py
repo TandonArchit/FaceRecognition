@@ -35,13 +35,15 @@ for face in faces:
 points = np.array(polypoints, np.int32)
 points = points.reshape((-1, 1, 2))
 
+## The following image is a blank white image to use as a background for the mask
+
 imgB = cv2.imread("/content/44ah0f.jpg")
 
-img = cv2.polylines(img, points, True, (0,0,255), 3)
+## The value 3 in the following images is the thickness of the points. Increase and decrease as required.
 
+img = cv2.polylines(img, points, True, (0,0,255), 3)
 imgB = cv2.polylines(imgB, points, True, (0,0,255), 3)
 
 
 cv2_imshow(img)
-
 cv2_imshow(imgB)
